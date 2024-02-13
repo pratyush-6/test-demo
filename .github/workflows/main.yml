@@ -14,7 +14,6 @@ jobs:
           host: thewall.host4india.in 
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
-          server-dir: /public_html/testing
           script: |
             cd public_html
             git pull origin main
