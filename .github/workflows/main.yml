@@ -14,4 +14,4 @@ jobs:
           server: ftp.thewall.host4india.in
           user: gitaction@thewall.host4india.in
           password: t#y}ChwC47i(
-         local_dir: "public_html/test"
+         
