@@ -1,7 +1,7 @@
 name: CI -> Deploy to My website
 on:
   push:
-    branches: [ main, development ]
+    branches: [ main ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,4 +14,4 @@ jobs:
           server: ftp.thewall.host4india.in
           user: gitaction@thewall.host4india.in
           password: t#y}ChwC47i(
-         
+         local_dir: "./public_html/test"
