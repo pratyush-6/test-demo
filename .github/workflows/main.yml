@@ -14,7 +14,7 @@ jobs:
           server: 172.105.127.109
           user: krish@thewall.host4india.in
           password: z^,DVbh=w?zc
-           script: |
+          script: |
             cd public_html
             git pull origin main
             git status
