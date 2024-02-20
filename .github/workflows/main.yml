@@ -14,4 +14,7 @@ jobs:
           server: 172.105.127.109
           user: thewallhost4indi
           password: r{7ENs[!Stb;
-          local-dir: public_html/gitaction
+          script: |
+            cd public_html
+            git pull origin main
+            git status
