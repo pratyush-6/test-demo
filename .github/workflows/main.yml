@@ -15,6 +15,7 @@ jobs:
           user: thewallhost4indi
           password: r{7ENs[!Stb;
           script: |
-            cd public_html
+            DEPLOY_DIR="public_html/gitaction"
+            cd "${DEPLOY_DIR}"
             git pull origin main
             git status
