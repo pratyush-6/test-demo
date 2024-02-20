@@ -11,10 +11,7 @@ jobs:
       - name: Upload from public_html via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:
-          server: ftp.thewall.host4india.in
-          user: thewallhost4indi
-          password: r{7ENs[!Stb;
-          script: |
-            cd public_html
-            git pull origin main
-            git status
+          server: 172.105.127.109
+          user: krish@thewall.host4india.in
+          password: z^,DVbh=w?zc
+  
