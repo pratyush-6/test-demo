@@ -2,20 +2,31 @@ name: CI -> Deploy to My website
 on:
   push:
     branches: [main]
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DEPLOY_DIR: ${{ github.event_name == 'pull_request' ? 'pr_deploy' : 'main_deploy' }}
     steps:
-      - uses: actions/checkout@v4
-      # Here is the deployment action
-      - name: Upload from public_html via FTP
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Upload to dynamically specified directory via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:
           server: 172.105.127.109
           user: thewallhost4indi
           password: r{7ENs[!Stb;
           script: |
-            DEPLOY_DIR="public_html"
+            # Determine the deployment directory based on repository and user email
+            if [[ "${{ github.repository }}" == "pratyush-6/test-demo" && "${{ github.event_name }}" == "push" && "${{ github.event.head_commit.author.email }}" == "pkpeatyush@gmail.com" ]]; then
+              DEPLOY_DIR="public_html/gitaction"
+            else
+              DEPLOY_DIR="public_html/"
+            fi
+            
+            # Change to the specified directory and perform deployment
             cd "${DEPLOY_DIR}"
             git pull origin main
             git status
