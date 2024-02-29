@@ -14,5 +14,5 @@ jobs:
           server: 172.105.127.109
           user: thewallhost4indi
           password: r{7ENs[!Stb;
-          remote_dir: /public_html
+          remote_dir: /public_html/gitaction
  
