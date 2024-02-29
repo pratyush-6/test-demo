@@ -12,10 +12,7 @@ jobs:
         uses: airvzxf/ftp-deployment-action@latest
         with:
           server: 172.105.127.109
-          user: krish@thewall.host4india.in
-          password: z^,DVbh=w?zc
-          local_dir: /public_html
-          script: |
-            cd public_html
-            git pull origin main
-            git status
+          user: thewallhost4indi
+          password: r{7ENs[!Stb;
+          remote_dir: /public_html
+ 
